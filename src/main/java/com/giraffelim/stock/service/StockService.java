@@ -15,11 +15,13 @@ public class StockService {
         this.stockRepository = stockRepository;
     }
 
-    @Transactional
-    public void decrease(Long id, Long quantity) {
+//    @Transactional
+    public synchronized void decrease (Long id, Long quantity) {
         // get stock
         Stock stock = stockRepository.findById(id).orElseThrow();
         // 재고 감소
         stock.decrease(quantity);
+        // 트랜잭션을 주석처리 했으므로 saveAndFlush() 호출
+        stockRepository.saveAndFlush(stock);
     }
 }
