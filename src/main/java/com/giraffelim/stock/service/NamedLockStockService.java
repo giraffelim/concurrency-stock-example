@@ -17,7 +17,7 @@ public class NamedLockStockService {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void decrease(Long id, Long quantity) {
-        Stock stock = stockRepository.findByIdWithOptimisticLock(id);
+        Stock stock = stockRepository.findById(id).orElseThrow();
         stock.decrease(quantity);
     }
 }
