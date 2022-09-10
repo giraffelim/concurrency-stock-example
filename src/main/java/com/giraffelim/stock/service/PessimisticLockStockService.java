@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class PessimisticLockStoreService {
+public class PessimisticLockStockService {
 
     private StockRepository stockRepository;
 
-    public PessimisticLockStoreService(StockRepository stockRepository) {
+    public PessimisticLockStockService(StockRepository stockRepository) {
         this.stockRepository = stockRepository;
     }
 

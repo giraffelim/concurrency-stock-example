@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class PessimisticStockServiceTest {
 
     @Autowired
-    private PessimisticLockStoreService stockService;
+    private PessimisticLockStockService stockService;
 
     @Autowired
     private StockRepository stockRepository;
